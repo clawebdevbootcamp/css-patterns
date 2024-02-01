@@ -1,0 +1,109 @@
+html,
+body {
+  padding: 24px;
+  margin: 0;
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* After importing font in CSS or linking it in HTML file we can use it */
+* {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Styling main title */
+h1 {
+  font-size: 64px;
+  margin-top: 0;
+}
+
+h1 span {
+  color: darkorchid;
+}
+
+/* Styling Paragraph */
+.container .left p {
+  max-width: 600px;
+}
+
+/* Making the buttons one under the other by changing their default display from inline to block */
+.buttons button {
+  display: block;
+}
+
+/* Styling the first button */
+.buttons button:first-child {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  font-weight: bold;
+}
+
+/* Styling the second button */
+.buttons .btn {
+  margin-top: 20px;
+  border: transparent;
+  background-color: blue;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Approach 1: Using Flexbox */
+
+/* @media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-inline: auto;
+    display: flex;
+  }
+
+  .container .left {
+    width: 50%;
+  }
+
+  .container .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+} */
+
+/* Responsive Design with Media queries */
+@media screen and (min-width: 1024px) and (max-width: 2900px) {
+  /* Approach 2: Using Grid (Recommended) */
+  .container {
+    max-width: 1300px;
+    /* 2 ways to center container horizontally */
+    margin: 0 auto;
+    margin-inline: auto;
+    /* Grid display with 2 columns and centering elements */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Centering image */
+  .container .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .right img {
+    border-radius: 20px;
+  }
+}
